@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<title>Waterfall Chart</title>
+	</head>
+	<body>		
+		<div id="container" style="width: 800px; height: 400px; margin: 0 auto"></div>
+		<script type="text/javascript" src="../javascripts/jquery-1.6.min.js"></script>
+		<script type="text/javascript" src="../javascripts/highcharts.src.js"></script>
+		<script type="text/javascript" src="../javascripts/mylib.js"></script>
+		<script type="text/javascript">
+			$("#container").stackedWaterfallChart({
+				series: [
+					{
+						name: 'Benchmark',
+						data: [
+							{y: 70, low: 50}, 
+							{y: 20, low: 130}, 
+							{y: 50, low: 165}, 
+							{y: 35, low: 240}, 
+							{y: 85, low: 290},
+							{y: 55, low: 420},
+							{y: 50, low: 500},
+							{y: 350, low: 200}
+						]
+					},
+					{
+						name: 'Target',
+						data: [
+							{y: 30, low: 20}, 
+							{y: 10, low: 120}, 
+							{y: 15, low: 150}, 
+							{y: 25, low: 215}, 
+							{y: 15, low: 275},
+							{y: 45, low: 375},
+							{y: 25, low: 475},
+							{y: 200, low: 0}
+						]
+					}
+				],
+				categories: ['Planned Care', 'Urgent Care', 'Mental Health', 'Maternity & newborn', 'Child Health', 'Prescribing', 'Learning disability', 'Total'],
+				ymax: 600
+			});
+		</script>
+	</body>
+</html>
