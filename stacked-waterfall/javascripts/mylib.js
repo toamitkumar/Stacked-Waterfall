@@ -17,7 +17,8 @@ $.fn.stackedWaterfallChart = function(options) {
 			},
 		  borderColor: 'black',
 			name: options.series[i].name,
-			data: options.series[i].data
+			data: options.series[i].data// ,
+			// 			dataLabels: [50, 1, 2, 3, 5, 7, 90, 76]
 		});
 	});
 	
@@ -47,7 +48,13 @@ $.fn.stackedWaterfallChart = function(options) {
 		tooltip: {enabled: false},
 		plotOptions: {
 			column: {
-				stacking: 'normal'
+				stacking: 'normal',
+				dataLabels: {
+					enabled: true,
+					formatter: function() {
+						return this.point.stackTotal;
+					}
+				}
 			}
 		},
 		series: seriesOptions
